@@ -3,7 +3,7 @@ fun main() {
     val user2 = User("jlex")
     val user3 = User("jlex","mamad")
 
-    println(user1.name)
+    println(user1.getFirstName())
     println(user2.name)
     println(user3.name)
 
@@ -13,13 +13,12 @@ fun main() {
 
 class User(name: String, var lastname: String = "Lastname", var age: Int = 0) {
     var name = name
-    get() {
-        return "FirstName : $field"
+
+    fun setFirstName(newValue:String){
+        this.name = newValue
     }
-    set(value){
-        println("$value was assigned")
-        field = value
+    fun getFirstName():String{
+        return this.name
     }
- 
 }
 
