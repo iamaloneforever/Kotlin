@@ -1,18 +1,18 @@
 fun main(args: Array<String>) {
+    val user1 = User("John", "Smith",10)
+    val user2 = User("John", "Smith",10)
+
+    println(user1 == user2)
+
 
 }
-abstract class Vehicle(){
+class User(var firstName: String, var lastName: String,val age:Int){
 
-    abstract fun move()
-    abstract fun stop()
-}
-class Car(var name:String,var color:String,val engines:Int,val doors:Int):Vehicle(){
-    override fun move() {
-
+    override fun equals(other: Any?): Boolean {
+         if (this === other) return true
+         if (other is User) {
+             if (firstName === other.firstName && lastName === other.lastName && age == other.age) return true
+         }
+        return false
     }
-
-    override fun stop() {
-
-    }
-
 }
